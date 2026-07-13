@@ -4,12 +4,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Переход в управление — наставничество для специалистов по трафику</title>
 <meta name="description" content="Помогаю таргетологам и директологам перейти от исполнителя к руководителю. Запишись на бесплатную диагностику.">
-<link rel="stylesheet" href="styles.css?v=9">
+<link rel="stylesheet" href="styles.css?v=17">
 </head>
 <body>
 
+<!-- ══════════ ПРОГРЕСС-БАР КАРЬЕРЫ ══════════ -->
+<div class="progress-rail" id="rail">
+  <div class="wrap">
+    <div class="rail-bar">
+      <span class="rail-fill" id="railFill" aria-hidden="true"></span>
+      <a class="rail-node n1" style="left:0%" href="#s-hero" aria-hidden="true" tabindex="-1"></a>
+      <a class="rail-node n2" style="left:50%" href="#s-paths" aria-hidden="true" tabindex="-1"></a>
+      <a class="rail-node n3" style="left:100%" href="#s-final" aria-hidden="true" tabindex="-1"></a>
+    </div>
+    <nav class="rail-labels" aria-label="Навигация по этапам роста">
+      <a class="rail-lb l1" href="#s-hero">Исполнитель</a>
+      <a class="rail-lb l2" href="#s-paths">Старший специалист</a>
+      <a class="rail-lb l3" href="#s-final">Руководитель</a>
+    </nav>
+  </div>
+</div>
+
 <!-- ══════════ ЭКРАН 1 — HERO ══════════ -->
-<section class="s-dark" data-screen-label="Экран 1 — Hero">
+<section class="s-dark" id="s-hero" data-screen-label="Экран 1 — Hero">
   <header class="site-header">
     <div class="wrap">
       <a href="#" class="brand">Сергей Ковалёв</a>
@@ -19,29 +36,6 @@
 
   <div class="hero">
     <div class="wrap">
-
-      <!-- Линейка карьеры -->
-      <div class="ruler" id="ruler">
-        <svg viewBox="0 0 460 70" aria-label="Путь роста: исполнитель, старший специалист, руководитель">
-          <line class="ruler-line" x1="14" y1="26" x2="446" y2="26"></line>
-
-          <g class="ruler-dot d1">
-            <circle cx="14" cy="26" r="6"></circle>
-          </g>
-          <text class="ruler-label" x="14" y="56" text-anchor="start">Исполнитель</text>
-
-          <g class="ruler-dot d2">
-            <circle cx="230" cy="26" r="6"></circle>
-          </g>
-          <text class="ruler-label" x="230" y="56" text-anchor="middle">Старший специалист</text>
-
-          <g class="ruler-dot d3 is-active">
-            <circle class="dot-ring" cx="446" cy="26" r="11"></circle>
-            <circle cx="446" cy="26" r="6"></circle>
-          </g>
-          <text class="ruler-label is-active" x="446" y="56" text-anchor="end">Руководитель</text>
-        </svg>
-      </div>
 
       <div class="hero-grid">
         <div class="hero-copy">
@@ -85,7 +79,7 @@
 </section>
 
 <!-- ══════════ ЭКРАН 3 — ДВА ПУТИ ══════════ -->
-<section class="s-light block" data-screen-label="Экран 3 — Два пути" style="padding-top:0;">
+<section class="s-light block" id="s-paths" data-screen-label="Экран 3 — Два пути" style="padding-top:0;">
   <div class="wrap">
     <h2 class="reveal">Когда специалист упирается в потолок, дальше обычно есть два пути.</h2>
 
@@ -125,7 +119,7 @@
 </section>
 
 <!-- ══════════ ЭКРАН 4 — ФИНАЛЬНЫЙ CTA ══════════ -->
-<section class="s-dark block final" data-screen-label="Экран 4 — Приглашение на диагностику">
+<section class="s-dark block final" id="s-final" data-screen-label="Экран 4 — Приглашение на диагностику">
   <div class="wrap">
     <div class="s4-grid">
       <div class="s4-left">
@@ -152,47 +146,136 @@
     </div>
 
     <div class="footer">
-      <span>© 2026 Сергей Ковалёв</span>
-      <span class="links">
+      <div class="footer-col">
+        <span class="footer-brand">© 2026 Сергей Ковалёв</span>
+        <span class="footer-legal">Самозанятый (НПД) · ИНН <span class="fill">[укажите ИНН]</span></span>
+      </div>
+      <nav class="footer-col links" aria-label="Документы и контакты">
+        <a href="#" class="js-modal" data-modal="modalPrivacy">Политика конфиденциальности</a>
+        <a href="#" class="js-modal" data-modal="modalConsent">Согласие на обработку ПДн</a>
         <a href="#" class="js-open">Telegram</a>
-        <a href="#" class="js-open">Написать</a>
-      </span>
+        <a href="mailto:[email протестировать]">Написать</a>
+      </nav>
+      <p class="footer-note">Информация на сайте не является публичной офертой. По вопросам обработки персональных данных: <a href="mailto:[email протестировать]">[email протестировать]</a>.</p>
     </div>
   </div>
 </section>
 
 <!-- ══════════ МОДАЛКА — ФОРМА ══════════ -->
 <div class="modal-backdrop" id="modal">
-  <button class="modal-close" id="modalClose" aria-label="Закрыть">×</button>
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div id="formWrap">
-      <h3 id="modalTitle">Оставь контакт — я напишу тебе в течение 24 часов.</h3>
-      <p class="modal-sub">Разберём твою ситуацию на бесплатной диагностике.</p>
-      <form id="leadForm" novalidate="">
-        <div class="field" data-field="">
-          <label for="f-name">Имя</label>
-          <input type="text" id="f-name" name="name" autocomplete="name">
-          <span class="err">Напиши, как тебя зовут.</span>
-        </div>
-        <div class="field" data-field="">
-          <label for="f-contact">Telegram или телефон</label>
-          <input type="text" id="f-contact" name="contact" placeholder="@username или +7…">
-          <span class="err">Оставь Telegram или номер, чтобы я мог ответить.</span>
-        </div>
-        <div class="field">
-          <label for="f-msg">Что сейчас мешает расти? <span style="color:var(--muted);font-weight:400;">(по желанию)</span></label>
-          <textarea id="f-msg" name="message" rows="2"></textarea>
-        </div>
-        <button class="btn" type="submit">Отправить заявку</button>
-      </form>
-    </div>
-    <div class="modal-success" id="successMsg" style="display:none;">
-      <div class="tick"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
-      <h3>Заявка отправлена.</h3>
-      <p>Я напишу тебе в течение 24 часов.</p>
+    <button class="modal-close" aria-label="Закрыть">×</button>
+    <div class="modal-scroll">
+      <div id="formWrap">
+        <h3 id="modalTitle">Оставь контакт — я напишу тебе в течение 24 часов.</h3>
+        <p class="modal-sub">Разберём твою ситуацию на бесплатной диагностике.</p>
+        <form id="leadForm" novalidate="">
+          <div class="field" data-field="">
+            <label for="f-name">Имя</label>
+            <input type="text" id="f-name" name="name" autocomplete="name">
+            <span class="err">Напиши, как тебя зовут.</span>
+          </div>
+          <div class="field" data-field="">
+            <label for="f-contact">Telegram или телефон</label>
+            <input type="text" id="f-contact" name="contact" placeholder="@username или +7…">
+            <span class="err">Оставь Telegram или номер, чтобы я мог ответить.</span>
+          </div>
+          <div class="field">
+            <label for="f-msg">Что сейчас мешает расти? <span style="color:var(--muted);font-weight:400;">(по желанию)</span></label>
+            <textarea id="f-msg" name="message" rows="2"></textarea>
+          </div>
+          <div class="consent" data-field-consent="">
+            <label class="consent-row">
+              <input type="checkbox" id="f-consent" name="consent">
+              <span class="consent-text">Я даю согласие на обработку персональных данных и принимаю <a href="#" class="js-modal" data-modal="modalPrivacy">политику конфиденциальности</a>.</span>
+            </label>
+            <span class="err">Без согласия на обработку данных я не смогу с тобой связаться.</span>
+          </div>
+          <button class="btn" type="submit">Отправить заявку</button>
+        </form>
+      </div>
+      <div class="modal-success" id="successMsg" style="display:none;">
+        <div class="tick"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+        <h3>Заявка отправлена.</h3>
+        <p>Я напишу тебе в течение 24 часов.</p>
+      </div>
     </div>
   </div>
 </div>
 
-<script src="script.js?v=2" defer></script>
+<!-- ══════════ МОДАЛКА — ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ ══════════ -->
+<div class="modal-backdrop" id="modalPrivacy">
+  <div class="modal modal-lg modal-doc" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+    <button class="modal-close" aria-label="Закрыть">×</button>
+    <div class="modal-scroll">
+      <h3 id="privacyTitle">Политика в отношении обработки персональных данных</h3>
+      <p class="doc-meta">Редакция от <span class="fill">[дата]</span></p>
+
+      <h4>1. Общие положения</h4>
+      <p>Настоящая Политика определяет порядок обработки и защиты персональных данных пользователей сайта (далее — «Сайт») и составлена в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных».</p>
+      <p>Оператор персональных данных (далее — «Оператор»): <span class="fill">[ФИО полностью]</span>, самозанятый (плательщик налога на профессиональный доход), ИНН <span class="fill">[укажите ИНН]</span>, e-mail для обращений: <a href="mailto:[email протестировать]"><span class="fill">[email протестировать]</span></a>.</p>
+      <p>Использование Сайта означает согласие пользователя с настоящей Политикой. При несогласии следует воздержаться от использования Сайта и отправки данных через формы.</p>
+
+      <h4>2. Какие данные обрабатываются</h4>
+      <p>Оператор обрабатывает данные, которые пользователь предоставляет добровольно при заполнении формы заявки:</p>
+      <ul>
+        <li>имя;</li>
+        <li>контакт для связи (никнейм в Telegram и/или номер телефона);</li>
+        <li>текст сообщения, если он указан.</li>
+      </ul>
+      <p>Также при посещении Сайта автоматически может собираться техническая информация: файлы cookie, данные об устройстве и браузере (см. раздел 8).</p>
+
+      <h4>3. Цели обработки</h4>
+      <ul>
+        <li>обработка заявки на бесплатную диагностическую консультацию и связь с пользователем;</li>
+        <li>предоставление ответов на обращения;</li>
+        <li>обеспечение работы Сайта и улучшение его функционирования.</li>
+      </ul>
+
+      <h4>4. Правовые основания</h4>
+      <p>Обработка осуществляется на основании согласия субъекта персональных данных, выраженного при отправке формы, а также положений законодательства РФ, регулирующих деятельность Оператора.</p>
+
+      <h4>5. Порядок и сроки обработки</h4>
+      <p>Обработка ведётся с использованием средств автоматизации и без таковых. Данные хранятся не дольше, чем этого требуют цели обработки, и удаляются по их достижении либо при отзыве согласия. Оператор принимает разумные организационные и технические меры для защиты данных.</p>
+
+      <h4>6. Передача третьим лицам</h4>
+      <p>Оператор не продаёт и не передаёт персональные данные третьим лицам, за исключением случаев, предусмотренных законодательством РФ, а также сервисов, обеспечивающих работу Сайта и обработку заявок (мессенджеры, сервисы связи), — в объёме, необходимом для достижения целей обработки.</p>
+
+      <h4>7. Права пользователя</h4>
+      <p>Пользователь вправе получать информацию об обработке своих данных, требовать их уточнения, блокирования или уничтожения, а также отозвать согласие. Для этого достаточно направить обращение на e-mail: <a href="mailto:[email протестировать]"><span class="fill">[email протестировать]</span></a>.</p>
+
+      <h4>8. Файлы cookie</h4>
+      <p>Сайт использует файлы cookie для корректной работы и сохранения пользовательских настроек. Пользователь может отключить cookie в настройках браузера, однако это может повлиять на работу отдельных функций Сайта.</p>
+
+      <h4>9. Изменения Политики</h4>
+      <p>Оператор вправе изменять настоящую Политику. Актуальная редакция всегда доступна на Сайте.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ МОДАЛКА — СОГЛАСИЕ НА ОБРАБОТКУ ПДн ══════════ -->
+<div class="modal-backdrop" id="modalConsent">
+  <div class="modal modal-lg modal-doc" role="dialog" aria-modal="true" aria-labelledby="consentTitle">
+    <button class="modal-close" aria-label="Закрыть">×</button>
+    <div class="modal-scroll">
+      <h3 id="consentTitle">Согласие на обработку персональных данных</h3>
+      <p>Проставляя отметку в поле согласия и отправляя форму на Сайте, пользователь свободно, своей волей и в своём интересе даёт согласие Оператору — <span class="fill">[ФИО полностью]</span>, ИНН <span class="fill">[укажите ИНН]</span> — на обработку указанных им персональных данных (имя, контакт для связи, текст сообщения).</p>
+      <p>Согласие даётся на совершение следующих действий: сбор, запись, систематизация, накопление, хранение, уточнение, использование, передача (в объёме, описанном в Политике конфиденциальности), блокирование, удаление и уничтожение — с целью обработки заявки и связи с пользователем.</p>
+      <p>Согласие действует до достижения целей обработки или до его отзыва. Отозвать согласие можно в любой момент, направив обращение на e-mail: <a href="mailto:[email протестировать]"><span class="fill">[email протестировать]</span></a>.</p>
+      <p>Полные условия обработки данных изложены в <a href="#" class="js-modal" data-modal="modalPrivacy">Политике конфиденциальности</a>.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ COOKIE-БАННЕР ══════════ -->
+<div class="cookie-bar" id="cookieBar" role="region" aria-label="Уведомление о файлах cookie" hidden>
+  <p class="cookie-text">
+    Сайт использует файлы cookie и обрабатывает данные для его работы. Оставаясь на сайте, вы соглашаетесь с <a href="#" class="js-modal" data-modal="modalPrivacy">политикой конфиденциальности</a>.
+  </p>
+  <div class="cookie-actions">
+    <button class="btn btn-sm cookie-ok" id="cookieOk" type="button">Принять</button>
+  </div>
+</div>
+
+<script src="script.js?v=6" defer></script>
 </body></html>
